@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
         initDataBinding();
         setSupportActionBar(mainActivityBinding.toolbar);
         setListUserView(mainActivityBinding.listUser);
-
+        setupObserver(userViewModel);
     }
 
     private void setListUserView(RecyclerView listUser) {
@@ -48,7 +48,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
         super.onDestroy();
         userViewModel.reset();
     }
-
+    public void setupObserver(Observable observable) {
+        observable.addObserver(this);
+    }
     @Override
     public void update(Observable observable, Object o) {
         if (observable instanceof UserViewModel) {

@@ -49,9 +49,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserAdapterVie
     public class UserAdapterViewHolder extends RecyclerView.ViewHolder {
 
         ItemUserBinding itemUserBinding;
-        public UserAdapterViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
+
 
         public UserAdapterViewHolder(ItemUserBinding itemUserBinding) {
             super(itemUserBinding.itemUser);
@@ -62,6 +60,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserAdapterVie
             if(itemUserBinding.getUserViewModel() ==null)
             {
                 itemUserBinding.setUserViewModel(new ItemUserViewModel(user,itemView.getContext()));
+            }
+            else {
+                itemUserBinding.getUserViewModel().setUser(user);
             }
         }
     }

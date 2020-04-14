@@ -26,6 +26,7 @@ public class ItemUserViewModel extends BaseObservable {
 
     public String getFullName()
     {
+        user.fullName=user.name.title + "." + user.name.firts + " " + user.name.last;
         return user.fullName;
     }
     public String getCell()
@@ -39,7 +40,7 @@ public class ItemUserViewModel extends BaseObservable {
 
     public String getPictureProfile()
     {
-        return user.picture;
+        return user.picture.large;
     }
 
     public void setUser(User user) {
