@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.commodity.list_mvvm_rxjava_retrofit_databinding.model;
+package com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel;
 
 import com.google.gson.annotations.SerializedName;
 

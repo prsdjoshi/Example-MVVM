@@ -9,6 +9,7 @@
         <variable
             name="mainViewModel"
             type="com.commodity.list_mvvm_rxjava_retrofit_databinding.viewmodel.UserViewModel"/>
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -47,6 +48,7 @@
                 android:id="@+id/label_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{mainViewModel.messageLabel}"
                 android:gravity="center" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -71,6 +73,7 @@
             android:onClick="@{() -> mainViewModel.onClickFabLoad()}"
             android:tint="#ffffff"
             android:src="@android:drawable/ic_input_add"/>
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

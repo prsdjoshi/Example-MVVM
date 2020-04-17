@@ -13,13 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.commodity.list_mvvm_rxjava_retrofit_databinding.model;
+
+package com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Login implements Serializable {
+public class Name implements Serializable {
 
-  @SerializedName("username") public String userName;
+  @SerializedName("title") public String title;
+
+  @SerializedName("first") public String firts;
+
+  @SerializedName("last") public String last;
 }

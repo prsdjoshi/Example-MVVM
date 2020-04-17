@@ -1,8 +1,6 @@
 package com.commodity.list_mvvm_rxjava_retrofit_databinding.view;
 
-import android.text.Layout;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -11,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.R;
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.databinding.ItemUserBinding;
-import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.User;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel.User;
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.viewmodel.ItemUserViewModel;
 
 import java.util.Collections;

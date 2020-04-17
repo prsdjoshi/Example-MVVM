@@ -16,16 +16,22 @@
 
 package com.commodity.list_mvvm_rxjava_retrofit_databinding.data;
 
-import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.User;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel.Info;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel.User;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class UserResponse {
 
+    public Info getResultscnt() {
+        return resultscnt;
+    }
+
+    @SerializedName("info")
+    private Info resultscnt;
     @SerializedName("results")
     private List<User> userList;
-
     public List<User> getuserList() {
         return userList;
     }

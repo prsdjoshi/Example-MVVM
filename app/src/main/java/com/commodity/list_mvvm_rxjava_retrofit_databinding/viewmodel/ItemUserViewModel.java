@@ -3,12 +3,13 @@ package com.commodity.list_mvvm_rxjava_retrofit_databinding.viewmodel;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
-import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.User;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel.User;
 
 public class ItemUserViewModel extends BaseObservable {
 
@@ -21,7 +22,7 @@ public class ItemUserViewModel extends BaseObservable {
 
     public void onItemClick(View view)
     {
-
+        Toast.makeText(context, user.fullName, Toast.LENGTH_SHORT).show();
     }
 
     public String getFullName()

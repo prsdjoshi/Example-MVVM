@@ -1,16 +1,18 @@
 package com.commodity.list_mvvm_rxjava_retrofit_databinding.viewmodel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
+import androidx.databinding.ObservableField;
 import androidx.databinding.ObservableInt;
-import androidx.lifecycle.ViewModel;
 
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.MyApplication;
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.data.UserResponse;
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.data.UserService;
 import com.commodity.list_mvvm_rxjava_retrofit_databinding.data.UsersFactory;
-import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.User;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.usermodel.User;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.view.EmpActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ public class UserViewModel extends Observable {
     private List<User> userList;
     public ObservableInt userRecycler;
     public ObservableInt userProgressbar;
+    public ObservableField<String> messageLabel;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     public UserViewModel(Context context) {
@@ -35,6 +38,7 @@ public class UserViewModel extends Observable {
         this.userList=new ArrayList<>();
         userRecycler = new ObservableInt(View.GONE);
         userProgressbar = new ObservableInt(View.GONE);
+        messageLabel = new ObservableField<>("");
 
     }
 
@@ -59,6 +63,7 @@ public class UserViewModel extends Observable {
                 .subscribe(new Consumer<UserResponse>() {
                     @Override
                     public void accept(UserResponse userResponse) throws Exception {
+                        messageLabel.set("Total Users: "+userResponse.getResultscnt().getResults());
                         updateUserData(userResponse.getuserList());
                         userProgressbar.set(View.GONE);
                         userRecycler.set(View.VISIBLE);

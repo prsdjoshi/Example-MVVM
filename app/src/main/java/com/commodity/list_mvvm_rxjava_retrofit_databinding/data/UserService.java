@@ -16,13 +16,20 @@
 
 package com.commodity.list_mvvm_rxjava_retrofit_databinding.data;
 
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.empmodel.Emp;
+import com.commodity.list_mvvm_rxjava_retrofit_databinding.model.empmodel.EmpData;
+
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Url;
 
 public interface UserService {
 
   @GET
-  Observable<UserResponse> fetchUser(@Url String url);
+    Observable<UserResponse> fetchUser(@Url String url);
+
+  @GET
+    Call<Emp> getEmp(@Url String url);
 
 }
