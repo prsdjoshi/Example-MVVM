@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.commodity.list_mvvm_rxjava_retrofit_databinding.MainViewModel"/>
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Users List using MVVM rxjava, retrofit and databinding"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_user"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+    <Button
+        android:id="@+id/btn_user"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:padding="10dp"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        android:onClick="@{() -> mainViewModel.onClickUserLoad()}"
+        app:layout_constraintTop_toBottomOf="@+id/txt1"
+        app:layout_constraintBottom_toTopOf="@+id/txt2"
+        android:text="Click to get Users">
+
+    </Button>
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_user"
+        app:layout_constraintBottom_toTopOf="@id/btn_Emp"
+        android:text="Get Users List using MVVM rxjava, retrofit and databinding"
+        ></TextView>
+    <Button
+        android:id="@+id/btn_Emp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="@{() -> mainViewModel.onClickEmpLoad()}"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/txt2"
+        android:text="Click to get Employees">
+
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
